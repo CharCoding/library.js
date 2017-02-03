@@ -48,7 +48,7 @@ var timer,
 	punctuation_end = '.,!?',
 	paragraph_end = ['.', '!', '?', '...'],
 	debug = true, // log all actions
-	debugStep = 0, // for logging
+	debugStep = 0; // for logging
 
 function vowel_2() {
 	var str = R(vowels) + R(vowels);
@@ -95,7 +95,7 @@ function localReplace(syl) {
 function word(syllables, option) { // accepted options: 1, 2, "country", "city", [falsy value]
 	if(option == "country") option = 1;
 	else if(option == "city") option = 2;
-	if(syllables == 2 && r(0.0025)) return 'ayylmao';
+	if(syllables == 2 && r(0.0025)) return 'ayylmao'; // remove if not suitable
 	var str = '',
 		state = {
 			start: true,
