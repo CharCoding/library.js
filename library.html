@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Library.js</title>
+	<style type="text/css">
+		p { font: 16px monospace; }
+		input, select, option, textarea { font-size: 16px; }
+		textarea { position: absolute; right: 0; overflow-y: auto; overflow-x: hidden; resize: none; }
+		#credits { position: absolute; bottom: 0; }
+		#info { overflow-y: auto; }
+		#parctrl { position: absolute; right: 10px; }
+	</style>
+	<script type="text/javascript" src="library.js" defer="defer"></script>
+</head>
+<body>
+	<form onsubmit="display()">
+		<label for="iteration">Iterations: </label>
+		<input type="number" id="iteration" value="3" min="1" max="10" step="1" /> <input type="submit" id="generate" value="Generate" /> &nbsp; 
+		<input type="checkbox" id="debugging" checked="checked" onchange="debug=this.checked;" />
+		<label for="debugging">Show process</label> &nbsp; &nbsp; 
+		<label for="type">Generate </label>
+		<select id="type">
+			<option value="0">word</option>
+			<option value="1">country</option>
+			<option value="2">city</option>
+		</select> &nbsp; 
+		<span id="parctrl">
+			Paragraph: <input type="button" id="generatepar" onclick="paragraph();" value="Generate" />
+			<input type="button" id="clear" value="Clear Textbox" onclick="par.value='';" />
+		</span><hr />
+		<textarea id="par" rows="20" cols="84" spellcheck="false" placeholder="Notice: This can't write essays for you."></textarea>
+	</form>
+	<p id="result"></p>
+	<p id="info"></p>
+	<p id="credits">Library.js v2.4 by CharCoding<br />Disclaimer: The output of this program does not necessarily express my thoughts. I have no control over the randomness that is being generated, therefore I am not responsible for any output of this program.<br />You should not use this software along with the excuse "My keyboard is broken" at school or work.</p>
+</body>
+</html>
