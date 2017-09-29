@@ -77,6 +77,7 @@ function globalReplace(word, option) {
 		.replace(/[bcdfghjklmnpqrstvwxz]([bcdfglnprstz])\1/g, function(match) { return match.substr(0, 2); }) // replace awkward double consonants
 		.replace(/[iy]{2,}/g, function(match) { return match.charAt(0); }) // replace ii, iy, yi, yy
 		.replace(/^x[^eyia]/g, function(match) { return match.substr(1); }) // replace [start of string]+x+[?] with [*]
+		.replace(/[^aieu]xion/g, function(match) { return R("aieu") + 'xion'; }) // add vowel before xion
 		.replace(/[^ srlhvaeiouy]v/g, function(match) { return match.charAt(0); }) // replace [not:srlhvaeiouy]+v with [*]
 		.replace(/.?k.k/g, function(match) { return match.slice(-2); }) // Don't let things like "cksk" slip (via citify)
 		.replace(/dg$/, 'dge') // dg ending add e
